@@ -1,0 +1,158 @@
+@keyframes gradientAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* NEW: Keyframe animation for the glowing button effect */
+@keyframes glow {
+  0% { box-shadow: 0 0 5px rgba(66, 133, 244, 0.6); }
+  50% { box-shadow: 0 0 20px rgba(66, 133, 244, 0.8); }
+  100% { box-shadow: 0 0 5px rgba(66, 133, 244, 0.6); }
+}
+
+.homepage-container {
+  background-color: #121212;
+  color: #f5f5f5;
+  font-family: 'Inter', sans-serif;
+}
+
+.hero-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 80vh;
+  padding: 2rem;
+  /* UPDATED: Replaced static image with animated gradient */
+  background: linear-gradient(-45deg, #1A237E, #283593, #1E88E5, #0D47A1);
+  background-size: 400% 400%;
+  animation: gradientAnimation 20s ease infinite;
+}
+
+.hero-content {
+  animation: fadeInUp 1s ease-out;
+}
+
+.hero-title {
+  font-size: 4.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  letter-spacing: -2px;
+  background: linear-gradient(90deg, #a7c7e7, #ffffff, #a7c7e7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  max-width: 600px;
+  margin: 0 auto 2.5rem auto;
+  color: #c0c0c0;
+  line-height: 1.7;
+}
+
+.hero-cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 1rem 2.5rem;
+  background-color: #4285F4;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: transform 0.2s ease;
+  /* NEW: Added glow animation */
+  animation: glow 4s linear infinite;
+}
+
+.hero-cta-button:hover {
+  transform: translateY(-4px);
+  /* Keep animation running, but you can add more hover effects if you want */
+}
+
+/* --- 4. Features Section (Updated with Light Theme) --- */
+
+.features-section {
+  padding: 5rem 2rem;
+  text-align: center;
+  /* NEW: Light background for a clean, modern contrast */
+  background-color: #f4f7f9;
+  border-top: 1px solid #e0e0e0;
+}
+
+.features-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 4rem;
+  /* NEW: Dark text for the light background */
+  color: #2c3e50;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.feature-card {
+  /* NEW: Clean white card style */
+  background-color: #ffffff;
+  padding: 2.5rem;
+  border-radius: 16px;
+  border: 1px solid #dde3ea;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-8px);
+  /* NEW: Softer shadow for the light theme */
+  box-shadow: 0 15px 40px rgba(52, 73, 94, 0.12);
+}
+
+.feature-icon {
+  color: #4285F4;
+  margin-bottom: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.feature-card:hover .feature-icon {
+  transform: scale(1.1) rotate(-5deg);
+}
+
+.feature-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+  /* NEW: Dark text for readability */
+  color: #2c3e50;
+}
+
+.feature-card p {
+  /* NEW: Standard paragraph text color for light backgrounds */
+  color: #5a6a79;
+  line-height: 1.6;
+}
+
+.footer {
+  text-align: center;
+  padding: 3rem 2rem;
+  background-color: #ffffff;
+  color: #777;
+  font-size: 0.9rem;
+  border-top: 1px solid #dde3ea;
+}
+
+/* Keyframe for fade-in effect (used by HomePage.jsx) */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.feature-card-link {
+  text-decoration: none;
+  color: inherit;
+}
